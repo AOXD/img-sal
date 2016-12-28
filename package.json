@@ -1,0 +1,36 @@
+{
+  "name": "img-sal",
+  "version": "0.0.0",
+  "description": "Image Search Abstraction Layer API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AOXD/img-sal.git"
+  },
+  "keywords": [
+    "FCC",
+    "Abstraction",
+    "Layer",
+    "API"
+  ],
+  "author": "AOXD",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AOXD/img-sal/issues"
+  },
+  "homepage": "https://github.com/AOXD/img-sal#readme",
+  "dependencies": {
+    "bing.search": "^1.0.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.5",
+    "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
