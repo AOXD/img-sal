@@ -4,7 +4,7 @@ const BingSearch = require('bing.search');
 
 module.exports = function(app, LatestSearch) {
   app.route('/latest')
-    .get(getLatestSearch);
+    .get(getLatestSearches);
 
   app.get('/:param', handlePost);
 
@@ -47,9 +47,9 @@ module.exports = function(app, LatestSearch) {
     });
   }
 
-  function getLatestSearch(req, res) {
-    // Check to see if the site is already there
-    History.find({}, null, {
+  function getLatestSearches(req, res) {
+    // check to see if the site is already there
+    LatestSearches.find({}, null, {
       "limit": 10,
       "sort": {
         "when": -1
@@ -57,11 +57,11 @@ module.exports = function(app, LatestSearch) {
     }, function(err, history) {
       if (err) return console.error(err);
       console.log(history);
-      res.send(history.map(function(arg) {
-        // Displays only the field we need to show.
+      res.send(history.map(function(item) {
+        // only show the field we need to
         return {
-          term: arg.term,
-          when: arg.when
+          term: item.term,
+          when: item.when
         };
       }));
     });
