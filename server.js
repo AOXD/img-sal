@@ -13,12 +13,12 @@ require('dotenv').config({
 const app = express();
 const port = process.env.PORT || 8080;
 
-const latestSearchSchema = new Schema({
+const latestSearchesSchema = new Schema({
   term: String,
   when: String
 });
 
-const LatestSearch = mongoose.model('LatestSearch', latestSearchSchema);
+const LatestSearches = mongoose.model('LatestSearches', latestSearchesSchema);
 
 const mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/img-sal';
 mongoose.connect(mongoURI);
