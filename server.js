@@ -4,8 +4,8 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const routes = require('app/routes/index.js');
-// 2.
+const routes = require('./app/routes/index.js');
+const api = require('./app/api/img-sal.js');
 require('dotenv').config({
   silent: true
 });
@@ -27,7 +27,7 @@ app.set('views', path.join(_dirname, + 'views'));
 app.set('view engine', 'pug');
 
 routes(app);
-// 2.
+api(app);
 
 app.listen(port, function(req, res) {
   console.log('App listening on port ' + port);
